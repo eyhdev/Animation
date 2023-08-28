@@ -14,6 +14,17 @@
 		D4F585EE2A9CDBA900AA3856 /* AnimationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F585ED2A9CDBA900AA3856 /* AnimationTests.swift */; };
 		D4F585F82A9CDBA900AA3856 /* AnimationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F585F72A9CDBA900AA3856 /* AnimationUITests.swift */; };
 		D4F585FA2A9CDBA900AA3856 /* AnimationUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F585F92A9CDBA900AA3856 /* AnimationUITestsLaunchTests.swift */; };
+		D4F586132A9CDBE200AA3856 /* UIScreenExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F586082A9CDBE200AA3856 /* UIScreenExtension.swift */; };
+		D4F586142A9CDBE200AA3856 /* AnimationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F586092A9CDBE200AA3856 /* AnimationData.swift */; };
+		D4F586152A9CDBE200AA3856 /* CustomToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F5860A2A9CDBE200AA3856 /* CustomToggle.swift */; };
+		D4F586162A9CDBE200AA3856 /* GlobalHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F5860B2A9CDBE200AA3856 /* GlobalHelpers.swift */; };
+		D4F586172A9CDBE200AA3856 /* String+Additional.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F5860C2A9CDBE200AA3856 /* String+Additional.swift */; };
+		D4F586182A9CDBE200AA3856 /* AnimationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F5860D2A9CDBE200AA3856 /* AnimationCell.swift */; };
+		D4F586192A9CDBE200AA3856 /* AnimationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F5860E2A9CDBE200AA3856 /* AnimationService.swift */; };
+		D4F5861A2A9CDBE200AA3856 /* Color+Adittional.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F5860F2A9CDBE200AA3856 /* Color+Adittional.swift */; };
+		D4F5861B2A9CDBE200AA3856 /* AnimationList.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F586102A9CDBE200AA3856 /* AnimationList.swift */; };
+		D4F5861C2A9CDBE200AA3856 /* MockAnimationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F586112A9CDBE200AA3856 /* MockAnimationService.swift */; };
+		D4F586202A9CDC2300AA3856 /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F5861F2A9CDC2300AA3856 /* ProgressBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +55,17 @@
 		D4F585F32A9CDBA900AA3856 /* AnimationUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AnimationUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4F585F72A9CDBA900AA3856 /* AnimationUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationUITests.swift; sourceTree = "<group>"; };
 		D4F585F92A9CDBA900AA3856 /* AnimationUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		D4F586082A9CDBE200AA3856 /* UIScreenExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIScreenExtension.swift; sourceTree = "<group>"; };
+		D4F586092A9CDBE200AA3856 /* AnimationData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationData.swift; sourceTree = "<group>"; };
+		D4F5860A2A9CDBE200AA3856 /* CustomToggle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomToggle.swift; sourceTree = "<group>"; };
+		D4F5860B2A9CDBE200AA3856 /* GlobalHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalHelpers.swift; sourceTree = "<group>"; };
+		D4F5860C2A9CDBE200AA3856 /* String+Additional.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Additional.swift"; sourceTree = "<group>"; };
+		D4F5860D2A9CDBE200AA3856 /* AnimationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationCell.swift; sourceTree = "<group>"; };
+		D4F5860E2A9CDBE200AA3856 /* AnimationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationService.swift; sourceTree = "<group>"; };
+		D4F5860F2A9CDBE200AA3856 /* Color+Adittional.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Color+Adittional.swift"; sourceTree = "<group>"; };
+		D4F586102A9CDBE200AA3856 /* AnimationList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationList.swift; sourceTree = "<group>"; };
+		D4F586112A9CDBE200AA3856 /* MockAnimationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockAnimationService.swift; sourceTree = "<group>"; };
+		D4F5861F2A9CDC2300AA3856 /* ProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +116,8 @@
 		D4F585DB2A9CDBA800AA3856 /* Animation */ = {
 			isa = PBXGroup;
 			children = (
+				D4F5861D2A9CDBEB00AA3856 /* AnimationView */,
+				D4F586062A9CDBB800AA3856 /* ModelView */,
 				D4F585DC2A9CDBA800AA3856 /* AnimationApp.swift */,
 				D4F585DE2A9CDBA800AA3856 /* ContentView.swift */,
 				D4F585E02A9CDBA900AA3856 /* Assets.xcassets */,
@@ -125,6 +149,39 @@
 				D4F585F92A9CDBA900AA3856 /* AnimationUITestsLaunchTests.swift */,
 			);
 			path = AnimationUITests;
+			sourceTree = "<group>";
+		};
+		D4F586062A9CDBB800AA3856 /* ModelView */ = {
+			isa = PBXGroup;
+			children = (
+				D4F5860D2A9CDBE200AA3856 /* AnimationCell.swift */,
+				D4F586092A9CDBE200AA3856 /* AnimationData.swift */,
+				D4F586102A9CDBE200AA3856 /* AnimationList.swift */,
+				D4F5860E2A9CDBE200AA3856 /* AnimationService.swift */,
+				D4F5860F2A9CDBE200AA3856 /* Color+Adittional.swift */,
+				D4F5860A2A9CDBE200AA3856 /* CustomToggle.swift */,
+				D4F5860B2A9CDBE200AA3856 /* GlobalHelpers.swift */,
+				D4F586112A9CDBE200AA3856 /* MockAnimationService.swift */,
+				D4F5860C2A9CDBE200AA3856 /* String+Additional.swift */,
+				D4F586082A9CDBE200AA3856 /* UIScreenExtension.swift */,
+			);
+			path = ModelView;
+			sourceTree = "<group>";
+		};
+		D4F5861D2A9CDBEB00AA3856 /* AnimationView */ = {
+			isa = PBXGroup;
+			children = (
+				D4F5861E2A9CDC0800AA3856 /* DownloadButton */,
+			);
+			path = AnimationView;
+			sourceTree = "<group>";
+		};
+		D4F5861E2A9CDC0800AA3856 /* DownloadButton */ = {
+			isa = PBXGroup;
+			children = (
+				D4F5861F2A9CDC2300AA3856 /* ProgressBar.swift */,
+			);
+			path = DownloadButton;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,7 +314,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4F586152A9CDBE200AA3856 /* CustomToggle.swift in Sources */,
+				D4F5861C2A9CDBE200AA3856 /* MockAnimationService.swift in Sources */,
+				D4F586162A9CDBE200AA3856 /* GlobalHelpers.swift in Sources */,
+				D4F5861A2A9CDBE200AA3856 /* Color+Adittional.swift in Sources */,
 				D4F585DF2A9CDBA800AA3856 /* ContentView.swift in Sources */,
+				D4F586182A9CDBE200AA3856 /* AnimationCell.swift in Sources */,
+				D4F586202A9CDC2300AA3856 /* ProgressBar.swift in Sources */,
+				D4F586192A9CDBE200AA3856 /* AnimationService.swift in Sources */,
+				D4F5861B2A9CDBE200AA3856 /* AnimationList.swift in Sources */,
+				D4F586142A9CDBE200AA3856 /* AnimationData.swift in Sources */,
+				D4F586132A9CDBE200AA3856 /* UIScreenExtension.swift in Sources */,
+				D4F586172A9CDBE200AA3856 /* String+Additional.swift in Sources */,
 				D4F585DD2A9CDBA800AA3856 /* AnimationApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
