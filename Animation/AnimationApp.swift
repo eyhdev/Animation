@@ -11,7 +11,7 @@ import SwiftUI
 struct AnimationApp: App {
     var body: some Scene {
         WindowGroup {
-            ProgressBarContentView()
+            OrderButton()
         }
     }
 }

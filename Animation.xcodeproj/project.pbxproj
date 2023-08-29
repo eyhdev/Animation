@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D41846762A9E207A00DDD87A /* DownloadButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41846752A9E207A00DDD87A /* DownloadButton.swift */; };
+		D46B1FCE2A9E265E004DB258 /* OrderButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46B1FCD2A9E265E004DB258 /* OrderButton.swift */; };
 		D4F585DD2A9CDBA800AA3856 /* AnimationApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F585DC2A9CDBA800AA3856 /* AnimationApp.swift */; };
 		D4F585DF2A9CDBA800AA3856 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F585DE2A9CDBA800AA3856 /* ContentView.swift */; };
 		D4F585E12A9CDBA900AA3856 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4F585E02A9CDBA900AA3856 /* Assets.xcassets */; };
@@ -45,6 +47,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D41846752A9E207A00DDD87A /* DownloadButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadButton.swift; sourceTree = "<group>"; };
+		D46B1FCD2A9E265E004DB258 /* OrderButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderButton.swift; sourceTree = "<group>"; };
 		D4F585D92A9CDBA800AA3856 /* Animation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Animation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4F585DC2A9CDBA800AA3856 /* AnimationApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationApp.swift; sourceTree = "<group>"; };
 		D4F585DE2A9CDBA800AA3856 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -93,6 +97,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D46B1FCC2A9E2650004DB258 /* OrderButton */ = {
+			isa = PBXGroup;
+			children = (
+				D46B1FCD2A9E265E004DB258 /* OrderButton.swift */,
+			);
+			path = OrderButton;
+			sourceTree = "<group>";
+		};
 		D4F585D02A9CDBA800AA3856 = {
 			isa = PBXGroup;
 			children = (
@@ -171,6 +183,7 @@
 		D4F5861D2A9CDBEB00AA3856 /* AnimationView */ = {
 			isa = PBXGroup;
 			children = (
+				D46B1FCC2A9E2650004DB258 /* OrderButton */,
 				D4F5861E2A9CDC0800AA3856 /* DownloadButton */,
 			);
 			path = AnimationView;
@@ -180,6 +193,7 @@
 			isa = PBXGroup;
 			children = (
 				D4F5861F2A9CDC2300AA3856 /* ProgressBar.swift */,
+				D41846752A9E207A00DDD87A /* DownloadButton.swift */,
 			);
 			path = DownloadButton;
 			sourceTree = "<group>";
@@ -319,6 +333,7 @@
 				D4F586162A9CDBE200AA3856 /* GlobalHelpers.swift in Sources */,
 				D4F5861A2A9CDBE200AA3856 /* Color+Adittional.swift in Sources */,
 				D4F585DF2A9CDBA800AA3856 /* ContentView.swift in Sources */,
+				D41846762A9E207A00DDD87A /* DownloadButton.swift in Sources */,
 				D4F586182A9CDBE200AA3856 /* AnimationCell.swift in Sources */,
 				D4F586202A9CDC2300AA3856 /* ProgressBar.swift in Sources */,
 				D4F586192A9CDBE200AA3856 /* AnimationService.swift in Sources */,
@@ -326,6 +341,7 @@
 				D4F586142A9CDBE200AA3856 /* AnimationData.swift in Sources */,
 				D4F586132A9CDBE200AA3856 /* UIScreenExtension.swift in Sources */,
 				D4F586172A9CDBE200AA3856 /* String+Additional.swift in Sources */,
+				D46B1FCE2A9E265E004DB258 /* OrderButton.swift in Sources */,
 				D4F585DD2A9CDBA800AA3856 /* AnimationApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
