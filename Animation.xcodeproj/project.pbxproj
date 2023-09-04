@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D41846762A9E207A00DDD87A /* DownloadButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41846752A9E207A00DDD87A /* DownloadButton.swift */; };
+		D4588EE22AA63AD20022CAC0 /* PasswordField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4588EE12AA63AD20022CAC0 /* PasswordField.swift */; };
 		D46B1FCE2A9E265E004DB258 /* OrderButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46B1FCD2A9E265E004DB258 /* OrderButton.swift */; };
 		D486435B2A9F6C2400A052F8 /* Spinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = D486435A2A9F6C2400A052F8 /* Spinner.swift */; };
 		D4DE0CC62AA0E456004A6E00 /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4DE0CC52AA0E456004A6E00 /* AudioPlayer.swift */; };
@@ -29,6 +30,7 @@
 		D4F5861B2A9CDBE200AA3856 /* AnimationList.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F586102A9CDBE200AA3856 /* AnimationList.swift */; };
 		D4F5861C2A9CDBE200AA3856 /* MockAnimationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F586112A9CDBE200AA3856 /* MockAnimationService.swift */; };
 		D4F586202A9CDC2300AA3856 /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F5861F2A9CDC2300AA3856 /* ProgressBar.swift */; };
+		D4FF3BBC2AA637DA00018335 /* sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D4FF3BBB2AA637DA00018335 /* sound.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +52,7 @@
 
 /* Begin PBXFileReference section */
 		D41846752A9E207A00DDD87A /* DownloadButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadButton.swift; sourceTree = "<group>"; };
+		D4588EE12AA63AD20022CAC0 /* PasswordField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordField.swift; sourceTree = "<group>"; };
 		D46B1FCD2A9E265E004DB258 /* OrderButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderButton.swift; sourceTree = "<group>"; };
 		D486435A2A9F6C2400A052F8 /* Spinner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spinner.swift; sourceTree = "<group>"; };
 		D4DE0CC52AA0E456004A6E00 /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
@@ -74,6 +77,7 @@
 		D4F586102A9CDBE200AA3856 /* AnimationList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationList.swift; sourceTree = "<group>"; };
 		D4F586112A9CDBE200AA3856 /* MockAnimationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockAnimationService.swift; sourceTree = "<group>"; };
 		D4F5861F2A9CDC2300AA3856 /* ProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBar.swift; sourceTree = "<group>"; };
+		D4FF3BBB2AA637DA00018335 /* sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = sound.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +105,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D4588EE02AA63AC60022CAC0 /* PasswordField */ = {
+			isa = PBXGroup;
+			children = (
+				D4588EE12AA63AD20022CAC0 /* PasswordField.swift */,
+			);
+			path = PasswordField;
+			sourceTree = "<group>";
+		};
 		D46B1FCC2A9E2650004DB258 /* OrderButton */ = {
 			isa = PBXGroup;
 			children = (
@@ -120,6 +132,7 @@
 		D4DE0CC42AA0E447004A6E00 /* AudioPlayerAnimation */ = {
 			isa = PBXGroup;
 			children = (
+				D4FF3BBB2AA637DA00018335 /* sound.mp3 */,
 				D4DE0CC52AA0E456004A6E00 /* AudioPlayer.swift */,
 			);
 			path = AudioPlayerAnimation;
@@ -203,6 +216,7 @@
 		D4F5861D2A9CDBEB00AA3856 /* AnimationView */ = {
 			isa = PBXGroup;
 			children = (
+				D4588EE02AA63AC60022CAC0 /* PasswordField */,
 				D4DE0CC42AA0E447004A6E00 /* AudioPlayerAnimation */,
 				D48643592A9F6C0800A052F8 /* Spinner */,
 				D46B1FCC2A9E2650004DB258 /* OrderButton */,
@@ -325,6 +339,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D4F585E42A9CDBA900AA3856 /* Preview Assets.xcassets in Resources */,
+				D4FF3BBC2AA637DA00018335 /* sound.mp3 in Resources */,
 				D4F585E12A9CDBA900AA3856 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -363,6 +378,7 @@
 				D4DE0CC62AA0E456004A6E00 /* AudioPlayer.swift in Sources */,
 				D4F5861B2A9CDBE200AA3856 /* AnimationList.swift in Sources */,
 				D4F586142A9CDBE200AA3856 /* AnimationData.swift in Sources */,
+				D4588EE22AA63AD20022CAC0 /* PasswordField.swift in Sources */,
 				D4F586132A9CDBE200AA3856 /* UIScreenExtension.swift in Sources */,
 				D4F586172A9CDBE200AA3856 /* String+Additional.swift in Sources */,
 				D46B1FCE2A9E265E004DB258 /* OrderButton.swift in Sources */,

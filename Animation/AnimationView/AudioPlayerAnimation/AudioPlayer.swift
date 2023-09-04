@@ -6,97 +6,198 @@
 //
 
 import SwiftUI
+import AVFoundation
+
+class AudioManager: ObservableObject {
+    static let shared = AudioManager()
+    
+    var audioPlayer: AVAudioPlayer?
+    var isPlaying: Bool = false
+    var timer: Timer?
+    
+    @Published var currentTime: TimeInterval = 0.0
+    @Published var duration: TimeInterval = 0.0
+    
+    func playPause() {
+        if isPlaying {
+            audioPlayer?.pause()
+            timer?.invalidate()
+        } else {
+            audioPlayer?.play()
+            startTimer()
+        }
+        isPlaying.toggle()
+    }
+    
+    func setupAudioPlayer(audioFileName: String) {
+        guard let audioURL = Bundle.main.url(forResource: audioFileName, withExtension: "mp3") else {
+            return
+        }
+        do {
+            audioPlayer = try AVAudioPlayer(contentsOf: audioURL)
+            duration = audioPlayer?.duration ?? 0.0
+        } catch {
+            print("Error loading audio file: \(error.localizedDescription)")
+        }
+    }
+    
+    func startTimer() {
+        timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { [weak self] timer in
+            guard let self = self else { return }
+            self.currentTime = self.audioPlayer?.currentTime ?? 0.0
+        }
+    }
+    
+    func seek(to time: TimeInterval) {
+        audioPlayer?.currentTime = time
+    }
+}
 
 struct AudioPlayer: View {
     
     @Namespace private var playerAnimation
     @State private var showDetails = true
     @State private var showsControls = true
-
-    @State var progress: CGFloat = 0.65
-
+    @State private var isPlaying = false
+    @State private var progress: CGFloat = 0.65
+    
+     @State private var isDraggingSlider = false
+    
+    @ObservedObject var audioManager = AudioManager.shared
+    
     var frame: CGFloat {
         showDetails ? 300 : 75
     }
+    
     var body: some View {
         VStack {
             Spacer()
             VStack {
-                HStack{
+                HStack {
                     Image("img1")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(width: frame, height: frame)
                         .padding(.top, showDetails ? 180 : 0)
-
+                    
                     if !showDetails {
+                        
                         VStack(alignment: .leading) {
                             Text("Forest Sound")
                                 .font(Font.custom("BEBAS NEUE", size: 25))
                                 .foregroundColor(.white)
-
+                            
                             Text("Sleep Sound")
                                 .foregroundColor(.gray)
                         }
                         .font(.title2)
                         .matchedGeometryEffect(id: "AlbumTitle", in: playerAnimation)
-
-
+                        
                         Spacer()
-
-                        Image(systemName: "play.fill")
-                            .font(.system(size: 30))
-                            .foregroundColor(.white)
-                            .padding()
+                        
+                        Button(action: {
+                            audioManager.playPause()
+                            isPlaying.toggle()
+                        }) {
+                            Image(systemName: isPlaying ? "pause.fill" : "play.fill")
+                                .font(.system(size: 30))
+                                .foregroundColor(.white)
+                                .padding()
+                        }
                     }
                 }
                 
-                if showDetails{
-                    Spacer()
-                        .frame(height: 44)
+                if showDetails {
                     
-                    HStack{
-                        Spacer()
-                            .frame(width: 44)
-                        
-                        VStack(alignment: .leading){
+                    VStack{
                             Text("Forest Sound")
                                 .font(Font.custom("BEBAS NEUE", size: 35))
                                 .foregroundColor(.white)
                             
                             Text("Sleep Sound")
                                 .foregroundColor(.gray)
-                            
+                                .font(.title2)
                         }
-                        .font(.title2)
+                      
                         .matchedGeometryEffect(id: "Album Title", in: playerAnimation)
                         
-                        Spacer()
-                    }
-                    
-                    VStack{
-                        ProgressBar(initialProgress: $progress, color: .white)
-                            .frame(height: 8)
-                            .padding([.leading, .trailing], 44)
+                    VStack {
+                        HStack {
+                            Text(formattedTime(audioManager.currentTime))
+                            
+                            Spacer()
+                            
+                            Text(formattedTime(audioManager.duration))
+                        }
+                        .font(.title2)
                         
-                        HStack{
-                            Image(systemName: "backward.fill")
-                                .font(.system(size: 30))
-                                .foregroundColor(.white)
-                                .padding()
+                        .padding()
+                        
+                        Slider(value: $audioManager.currentTime, in: 0...audioManager.duration, onEditingChanged: { editing in
+                            isDraggingSlider = editing
+                            if !editing {
+                                audioManager.seek(to: audioManager.currentTime)
+                                if isPlaying {
+                                    audioManager.playPause()
+                                }
+                            }
+                        })
+                        .disabled(audioManager.duration.isZero)
+                        .accentColor(Color.white) // Beyaz renk
+                        .padding()
+
+
+                                 
+                        HStack {
                             
-                            Image(systemName: "play.circle.fill")
-                                .font(.system(size: 50))
-                                .foregroundColor(.white)
-                                .padding()
+                            Button(action: {
+                                
+                            }) {
+                                Image(systemName: "gobackward.15")
+                                    .font(.system(size: 35))
+                                    .foregroundColor(.white)
+                                    .padding()
+                                    .onTapGesture {
+                                        let newTime = audioManager.currentTime - 10 // 10 saniye geri git
+                                        if newTime < 0 {
+                                            audioManager.seek(to: 0)
+                                        } else {
+                                            audioManager.seek(to: newTime)
+                                        }
+                                    }
+                            }
                             
-                            Image(systemName: "forward.fill")
-                                .font(.system(size: 30))
-                                .foregroundColor(.white)
-                                .padding()
+                            Button(action: {
+                                audioManager.playPause()
+                                isPlaying.toggle()
+                            }) {
+                                Image(systemName: isPlaying ? "pause.circle.fill" : "play.circle.fill")
+                                    .font(.system(size: 50))
+                                    .foregroundColor(.white)
+                                    .padding()
+                            }
+                            
+                            Button(action: {
+                                
+                            }) {
+                                Image(systemName: "goforward.15")
+                                    .font(.system(size: 35))
+                                    .foregroundColor(.white)
+                                    .padding()
+                                    .onTapGesture {
+                                        let newTime = audioManager.currentTime + 10 // 10 saniye ileri git
+                                        if newTime > audioManager.duration {
+                                            audioManager.seek(to: audioManager.duration)
+                                        } else {
+                                            audioManager.seek(to: newTime)
+                                        }
+                                    }
+                            }
+                            
+                            
                         }
                     }.opacity(showsControls ? 1 : 0)
-                        .animation(.easeIn)
+                    .animation(.easeIn)
                     Spacer()
                 }
             }
@@ -112,20 +213,29 @@ struct AudioPlayer: View {
             .frame(maxWidth: .infinity)
             .frame(height: showDetails ? UIScreen.screenHeight + 44 : 75)
         }
+        .onAppear {
+            audioManager.setupAudioPlayer(audioFileName: "sound")
+        }
     }
+    func formattedTime(_ time: TimeInterval) -> String {
+         let minutes = Int(time) / 60
+         let seconds = Int(time) % 60
+         return String(format: "%02d:%02d", minutes, seconds)
+     }
 }
 
 
-struct AudioPlayerContentView: View{
-    var body: some View{
-        ZStack{
+struct AudioPlayerContentView: View {
+    var body: some View {
+        ZStack {
             AudioPlayer()
         }
     }
 }
+
 struct AudioPlayer_Previews: PreviewProvider {
     static var previews: some View {
-        AudioPlayerContentView()
+        AudioPlayer()
             .preferredColorScheme(.dark)
     }
 }
