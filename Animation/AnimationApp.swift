@@ -11,11 +11,7 @@ import SwiftUI
 struct AnimationApp: App {
     var body: some Scene {
         WindowGroup {
-            ZStack{
-                PasswordField()
-                    .frame(width: 300)
-                    .preferredColorScheme(.dark)
-            }
+            AudioContentView()
         }
     }
 }

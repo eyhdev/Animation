@@ -2,7 +2,7 @@
 //  AudioPlayer.swift
 //  Animation
 //
-//  Created by eyh.mac on 31.08.2023.
+//  Created by eyh.mac on 5.09.2023.
 //
 
 import SwiftUI
@@ -22,33 +22,29 @@ class AudioManager: ObservableObject {
         if isPlaying {
             audioPlayer?.pause()
             timer?.invalidate()
-        } else {
+        }else{
             audioPlayer?.play()
             startTimer()
         }
         isPlaying.toggle()
     }
-    
-    func setupAudioPlayer(audioFileName: String) {
+    func setAudioPlayer(audioFileName: String){
         guard let audioURL = Bundle.main.url(forResource: audioFileName, withExtension: "mp3") else {
             return
         }
-        do {
+        do{
             audioPlayer = try AVAudioPlayer(contentsOf: audioURL)
             duration = audioPlayer?.duration ?? 0.0
-        } catch {
+        }catch {
             print("Error loading audio file: \(error.localizedDescription)")
         }
     }
-    
     func startTimer() {
         timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { [weak self] timer in
-            guard let self = self else { return }
-            self.currentTime = self.audioPlayer?.currentTime ?? 0.0
+            self?.currentTime = self?.audioPlayer?.currentTime ?? 0.0
         }
     }
-    
-    func seek(to time: TimeInterval) {
+    func seek(to time: TimeInterval){
         audioPlayer?.currentTime = time
     }
 }
@@ -57,11 +53,11 @@ struct AudioPlayer: View {
     
     @Namespace private var playerAnimation
     @State private var showDetails = true
-    @State private var showsControls = true
+    @State private var showControls = true
     @State private var isPlaying = false
     @State private var progress: CGFloat = 0.65
     
-     @State private var isDraggingSlider = false
+    @State private var isDraggingSlider = false
     
     @ObservedObject var audioManager = AudioManager.shared
     
@@ -70,10 +66,10 @@ struct AudioPlayer: View {
     }
     
     var body: some View {
-        VStack {
+        VStack{
             Spacer()
-            VStack {
-                HStack {
+            VStack{
+                HStack{
                     Image("img1")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
@@ -82,7 +78,8 @@ struct AudioPlayer: View {
                     
                     if !showDetails {
                         
-                        VStack(alignment: .leading) {
+                        VStack(alignment: .leading){
+                            
                             Text("Forest Sound")
                                 .font(Font.custom("BEBAS NEUE", size: 25))
                                 .foregroundColor(.white)
@@ -91,51 +88,50 @@ struct AudioPlayer: View {
                                 .foregroundColor(.gray)
                         }
                         .font(.title2)
-                        .matchedGeometryEffect(id: "AlbumTitle", in: playerAnimation)
+                        .matchedGeometryEffect(id: "Album Title", in: playerAnimation)
                         
                         Spacer()
                         
                         Button(action: {
                             audioManager.playPause()
                             isPlaying.toggle()
+                            
                         }) {
                             Image(systemName: isPlaying ? "pause.fill" : "play.fill")
                                 .font(.system(size: 30))
                                 .foregroundColor(.white)
                                 .padding()
+                                
                         }
                     }
                 }
-                
-                if showDetails {
+                if showDetails{
+                    VStack{
+                        Text("Forest Sound")
+                            .font(Font.custom("BEBAS NEUE", size: 25))
+                            .foregroundColor(.white)
+                        
+                        Text("Sleep Sound")
+                            .font(.title2)
+                            .foregroundColor(.gray)
+                    }
+                    
+                    .matchedGeometryEffect(id: "Album Title", in: playerAnimation)
                     
                     VStack{
-                            Text("Forest Sound")
-                                .font(Font.custom("BEBAS NEUE", size: 35))
-                                .foregroundColor(.white)
-                            
-                            Text("Sleep Sound")
-                                .foregroundColor(.gray)
-                                .font(.title2)
-                        }
-                      
-                        .matchedGeometryEffect(id: "Album Title", in: playerAnimation)
-                        
-                    VStack {
-                        HStack {
+                        HStack{
                             Text(formattedTime(audioManager.currentTime))
-                            
                             Spacer()
-                            
                             Text(formattedTime(audioManager.duration))
                         }
+                        
                         .font(.title2)
                         
                         .padding()
                         
                         Slider(value: $audioManager.currentTime, in: 0...audioManager.duration, onEditingChanged: { editing in
                             isDraggingSlider = editing
-                            if !editing {
+                            if !editing{
                                 audioManager.seek(to: audioManager.currentTime)
                                 if isPlaying {
                                     audioManager.playPause()
@@ -143,67 +139,63 @@ struct AudioPlayer: View {
                             }
                         })
                         .disabled(audioManager.duration.isZero)
-                        .accentColor(Color.white) // Beyaz renk
+                        .accentColor(Color.white)
                         .padding()
-
-
-                                 
-                        HStack {
-                            
-                            Button(action: {
-                                
-                            }) {
+                        
+                        HStack{
+                            Button(action: {}) {
                                 Image(systemName: "gobackward.15")
                                     .font(.system(size: 35))
                                     .foregroundColor(.white)
                                     .padding()
                                     .onTapGesture {
-                                        let newTime = audioManager.currentTime - 10 // 10 saniye geri git
+                                        let newTime = audioManager.currentTime - 10
                                         if newTime < 0 {
                                             audioManager.seek(to: 0)
-                                        } else {
+                                        }else{
                                             audioManager.seek(to: newTime)
                                         }
                                     }
+                                    
                             }
                             
                             Button(action: {
                                 audioManager.playPause()
                                 isPlaying.toggle()
+                                
                             }) {
                                 Image(systemName: isPlaying ? "pause.circle.fill" : "play.circle.fill")
                                     .font(.system(size: 50))
                                     .foregroundColor(.white)
                                     .padding()
+                                    
                             }
                             
-                            Button(action: {
-                                
-                            }) {
+                            Button(action: {}) {
                                 Image(systemName: "goforward.15")
                                     .font(.system(size: 35))
                                     .foregroundColor(.white)
                                     .padding()
                                     .onTapGesture {
-                                        let newTime = audioManager.currentTime + 10 // 10 saniye ileri git
+                                        let newTime = audioManager.currentTime + 10
                                         if newTime > audioManager.duration {
                                             audioManager.seek(to: audioManager.duration)
-                                        } else {
+                                        }else{
                                             audioManager.seek(to: newTime)
                                         }
                                     }
+                                    
                             }
-                            
-                            
                         }
-                    }.opacity(showsControls ? 1 : 0)
-                    .animation(.easeIn)
-                    Spacer()
+                    }
+                    .padding()
                 }
+                
+                
             }
-            
+        
             .onTapGesture {
-                showsControls.toggle()
+                showControls.toggle()
                 Timer.scheduledTimer(withTimeInterval: 0.15, repeats: false) { timer in
                     withAnimation(.spring()) {
                         self.showDetails.toggle()
@@ -213,21 +205,22 @@ struct AudioPlayer: View {
             .frame(maxWidth: .infinity)
             .frame(height: showDetails ? UIScreen.screenHeight + 44 : 75)
         }
-        .onAppear {
-            audioManager.setupAudioPlayer(audioFileName: "sound")
+        .onAppear{
+            audioManager.setAudioPlayer(audioFileName: "sound")
         }
     }
+    
     func formattedTime(_ time: TimeInterval) -> String {
-         let minutes = Int(time) / 60
-         let seconds = Int(time) % 60
-         return String(format: "%02d:%02d", minutes, seconds)
-     }
+        let minute = Int(time) / 60
+        let seconds = Int(time) % 60
+        return String(format: "%02d:%02d", minute,seconds)
+        
+    }
 }
 
-
-struct AudioPlayerContentView: View {
-    var body: some View {
-        ZStack {
+struct AudioContentView: View{
+    var body: some View{
+        ZStack{
             AudioPlayer()
         }
     }
@@ -235,7 +228,7 @@ struct AudioPlayerContentView: View {
 
 struct AudioPlayer_Previews: PreviewProvider {
     static var previews: some View {
-        AudioPlayer()
+        AudioContentView()
             .preferredColorScheme(.dark)
     }
 }
