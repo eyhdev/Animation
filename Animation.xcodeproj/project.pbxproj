@@ -12,6 +12,7 @@
 		D4588EE22AA63AD20022CAC0 /* PasswordField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4588EE12AA63AD20022CAC0 /* PasswordField.swift */; };
 		D46B1FCE2A9E265E004DB258 /* OrderButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46B1FCD2A9E265E004DB258 /* OrderButton.swift */; };
 		D486435B2A9F6C2400A052F8 /* Spinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = D486435A2A9F6C2400A052F8 /* Spinner.swift */; };
+		D4B6B6842AA7420B00B6DDB2 /* StopWatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B6B6832AA7420B00B6DDB2 /* StopWatch.swift */; };
 		D4F585DD2A9CDBA800AA3856 /* AnimationApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F585DC2A9CDBA800AA3856 /* AnimationApp.swift */; };
 		D4F585DF2A9CDBA800AA3856 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F585DE2A9CDBA800AA3856 /* ContentView.swift */; };
 		D4F585E12A9CDBA900AA3856 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4F585E02A9CDBA900AA3856 /* Assets.xcassets */; };
@@ -56,6 +57,7 @@
 		D4588EE12AA63AD20022CAC0 /* PasswordField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordField.swift; sourceTree = "<group>"; };
 		D46B1FCD2A9E265E004DB258 /* OrderButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderButton.swift; sourceTree = "<group>"; };
 		D486435A2A9F6C2400A052F8 /* Spinner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spinner.swift; sourceTree = "<group>"; };
+		D4B6B6832AA7420B00B6DDB2 /* StopWatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopWatch.swift; sourceTree = "<group>"; };
 		D4F585D92A9CDBA800AA3856 /* Animation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Animation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4F585DC2A9CDBA800AA3856 /* AnimationApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationApp.swift; sourceTree = "<group>"; };
 		D4F585DE2A9CDBA800AA3856 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -127,6 +129,14 @@
 				D486435A2A9F6C2400A052F8 /* Spinner.swift */,
 			);
 			path = Spinner;
+			sourceTree = "<group>";
+		};
+		D4B6B6822AA741F800B6DDB2 /* StopWatch */ = {
+			isa = PBXGroup;
+			children = (
+				D4B6B6832AA7420B00B6DDB2 /* StopWatch.swift */,
+			);
+			path = StopWatch;
 			sourceTree = "<group>";
 		};
 		D4DE0CC42AA0E447004A6E00 /* AudioPlayerAnimation */ = {
@@ -216,6 +226,7 @@
 		D4F5861D2A9CDBEB00AA3856 /* AnimationView */ = {
 			isa = PBXGroup;
 			children = (
+				D4B6B6822AA741F800B6DDB2 /* StopWatch */,
 				D4588EE02AA63AC60022CAC0 /* PasswordField */,
 				D4DE0CC42AA0E447004A6E00 /* AudioPlayerAnimation */,
 				D48643592A9F6C0800A052F8 /* Spinner */,
@@ -381,6 +392,7 @@
 				D4588EE22AA63AD20022CAC0 /* PasswordField.swift in Sources */,
 				D4F586132A9CDBE200AA3856 /* UIScreenExtension.swift in Sources */,
 				D4F586172A9CDBE200AA3856 /* String+Additional.swift in Sources */,
+				D4B6B6842AA7420B00B6DDB2 /* StopWatch.swift in Sources */,
 				D46B1FCE2A9E265E004DB258 /* OrderButton.swift in Sources */,
 				D4F585DD2A9CDBA800AA3856 /* AnimationApp.swift in Sources */,
 			);
