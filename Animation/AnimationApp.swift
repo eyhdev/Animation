@@ -11,7 +11,8 @@ import SwiftUI
 struct AnimationApp: App {
     var body: some Scene {
         WindowGroup {
-            AudioContentView()
+            PageControlPreview()
+                .preferredColorScheme(.dark)
         }
     }
 }

@@ -10,6 +10,7 @@
 		D41846762A9E207A00DDD87A /* DownloadButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41846752A9E207A00DDD87A /* DownloadButton.swift */; };
 		D4249E3E2AA72C6400F07E32 /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4249E3D2AA72C6400F07E32 /* AudioPlayer.swift */; };
 		D4588EE22AA63AD20022CAC0 /* PasswordField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4588EE12AA63AD20022CAC0 /* PasswordField.swift */; };
+		D45A8F3A2AA752F7003CE80F /* PageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45A8F392AA752F7003CE80F /* PageControl.swift */; };
 		D46B1FCE2A9E265E004DB258 /* OrderButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46B1FCD2A9E265E004DB258 /* OrderButton.swift */; };
 		D486435B2A9F6C2400A052F8 /* Spinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = D486435A2A9F6C2400A052F8 /* Spinner.swift */; };
 		D4B6B6842AA7420B00B6DDB2 /* StopWatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B6B6832AA7420B00B6DDB2 /* StopWatch.swift */; };
@@ -55,6 +56,7 @@
 		D41846752A9E207A00DDD87A /* DownloadButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadButton.swift; sourceTree = "<group>"; };
 		D4249E3D2AA72C6400F07E32 /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
 		D4588EE12AA63AD20022CAC0 /* PasswordField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordField.swift; sourceTree = "<group>"; };
+		D45A8F392AA752F7003CE80F /* PageControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageControl.swift; sourceTree = "<group>"; };
 		D46B1FCD2A9E265E004DB258 /* OrderButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderButton.swift; sourceTree = "<group>"; };
 		D486435A2A9F6C2400A052F8 /* Spinner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spinner.swift; sourceTree = "<group>"; };
 		D4B6B6832AA7420B00B6DDB2 /* StopWatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopWatch.swift; sourceTree = "<group>"; };
@@ -113,6 +115,14 @@
 				D4588EE12AA63AD20022CAC0 /* PasswordField.swift */,
 			);
 			path = PasswordField;
+			sourceTree = "<group>";
+		};
+		D45A8F382AA752EB003CE80F /* PageControl */ = {
+			isa = PBXGroup;
+			children = (
+				D45A8F392AA752F7003CE80F /* PageControl.swift */,
+			);
+			path = PageControl;
 			sourceTree = "<group>";
 		};
 		D46B1FCC2A9E2650004DB258 /* OrderButton */ = {
@@ -226,6 +236,7 @@
 		D4F5861D2A9CDBEB00AA3856 /* AnimationView */ = {
 			isa = PBXGroup;
 			children = (
+				D45A8F382AA752EB003CE80F /* PageControl */,
 				D4B6B6822AA741F800B6DDB2 /* StopWatch */,
 				D4588EE02AA63AC60022CAC0 /* PasswordField */,
 				D4DE0CC42AA0E447004A6E00 /* AudioPlayerAnimation */,
@@ -386,6 +397,7 @@
 				D486435B2A9F6C2400A052F8 /* Spinner.swift in Sources */,
 				D4F586202A9CDC2300AA3856 /* ProgressBar.swift in Sources */,
 				D4F586192A9CDBE200AA3856 /* AnimationService.swift in Sources */,
+				D45A8F3A2AA752F7003CE80F /* PageControl.swift in Sources */,
 				D4F5861B2A9CDBE200AA3856 /* AnimationList.swift in Sources */,
 				D4249E3E2AA72C6400F07E32 /* AudioPlayer.swift in Sources */,
 				D4F586142A9CDBE200AA3856 /* AnimationData.swift in Sources */,
